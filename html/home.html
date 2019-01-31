@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav" style=" background-color: #c7ae8a;">
+			<h1 class="mui-title" style="text-align: left; color: white;">零食商贩</h1>
+		</header>
+		<!--主体-->
+		<div class="mui-content" align="center">
+			<div id="home_content" class="mui-control-content mui-active">
+				<!--下拉刷新容器-->
+				<div id="refreshContainer" class="mui-content mui-scroll-wrapper"><div id="icon">
+					
+				</div></div>
+				<!-- 轮播图 -->
+				<div class="mui-slider" style="height: 190px;">
+				  <div class="mui-slider-group mui-slider-loop">
+					<!--支持循环，需要重复图片节点-->
+					<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../images/3.jpg" /></a></div>
+					<div class="mui-slider-item"><a href="#"><img src="../images/1.jpg" /></a></div>
+					<div class="mui-slider-item"><a href="#"><img src="../images/2.jpg" /></a></div>
+					<div class="mui-slider-item"><a href="#"><img src="../images/3.jpg" /></a></div>
+					<!--支持循环，需要重复图片节点-->
+					<div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="../images/1.jpg" /></a></div>
+				  </div>
+				</div>
+				<!-- //精选主题 -->
+				<div id="jx" style="height: 44px;">
+					<h1 class="mui-title" style="color:#c7ae8a;;">精选主题</h1>
+				</div>
+				<div id="threepic" style="background: red;height: 272px;">
+					<div class="up mui-clearfix" style="background: pink;height: 50%;">
+						<div class="pic1 mui-pull-left" style="background: #0062cc;height: 136px;width:50%;>
+							<a href="#"><img src="../images/1.jpg" style="width: 100%;height: 100%;"></a>
+						</div>
+						<div class="pic2  mui-pull-left" style="background: yellow;height: 136px;width:50%;">
+							<a href="#"><img src="../images/2.jpg" style="width: 100%;height: 100%;"></a>
+						</div>
+					</div>
+					<div class="down" style="height: 50%; background-color: pink;">
+						<a href="#"><img src="../images/3.jpg" style="width: 100%;height: 100%;"></a>
+					</div>
+				</div>
+				<!-- //最新物品 -->
+				<div id="zx" style="height: 44px;">
+					<h1 class="mui-title" style="color:#c7ae8a;;">最新物品</h1>
+				</div>
+				<div class="newgoods">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell mui-media mui-pull-left" style="width:50%;">
+							<a href="javascript:;">
+								<img class="" src="../images/1.jpg" style="width:100%;height:100%">
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-pull-left" style="width:50%;">
+							<a href="javascript:;">
+								<img class="" src="../images/1.jpg" style="width:100%;height:100%">
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-pull-left" style="width:50%;">
+							<a href="javascript:;">
+								<img class="" src="../images/1.jpg" style="width:100%;height:100%">
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-pull-left" style="width:50%;">
+							<a href="javascript:;">
+								<img class="" src="../images/1.jpg" style="width:100%;height:100%">
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-pull-left" style="width:50%;">
+							<a href="javascript:;">
+								<img class="" src="../images/1.jpg" style="width:100%;height:100%">
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-pull-left" style="width:50%;">
+							<a href="javascript:;">
+								<img class="" src="../images/1.jpg" style="width:100%;height:100%">
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-pull-left" style="width:50%;">
+							<a href="javascript:;">
+								<img class="" src="../images/1.jpg" style="width:100%;height:100%">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+<script type="text/javascript">
+	mui.init({
+		pullRefresh : {
+		 container:"#refreshContainer",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+		 down:{
+			 callback :aaa //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+			 },
+// 		 up: {
+// 			 contentrefresh: '正在加载...',
+// 			 contentnomore:'没有更多数据了',
+// 			 callback: bbb
+// 			 },
+	   }
+	});
+	 function aaa(){
+		 mui('#refreshContainer').pullRefresh().endPulldown();
+	 }
+// 	 function bbb(){
+// 		 this.endPullupToRefresh(true);
+// 	 }
+	mui.plusReady(function(){
+		var gallery = mui('.mui-slider');
+		gallery.slider({
+		  interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+		});
+// 			document.querySelector('.mui-slider').addEventListener('slide',function(e){
+// 				if(e.detail.slideNumber == 0)
+// 				{
+// 					mui.toast('hello');
+// 				}
+// 			});
+
+	});
+</script>
+	</body>
+</html>
